@@ -1,0 +1,6 @@
+node_modules/
+.wrangler/
+.deploy-state/
+.playwright-cli/
+.browser-review/
+.task-plan.md

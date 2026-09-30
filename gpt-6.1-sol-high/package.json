@@ -1,0 +1,15 @@
+{
+  "name": "make-it-zaebis",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/wrangler.js dev --port 8787",
+    "check": "node --check public/app.js",
+    "deploy:check": "node scripts/wrangler.js deploy --dry-run",
+    "deploy": "node scripts/wrangler.js deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.145.0"
+  }
+}

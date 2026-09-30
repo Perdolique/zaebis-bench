@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#10110f" />
+    <meta name="description" content="Одна кнопка. Бесконечная заебистность. Нажимай и устраивай яркий визуальный хаос." />
+    <title>Сделать заебись — нажми ещё</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <canvas id="effects" aria-hidden="true"></canvas>
+    <div class="ambient" aria-hidden="true"></div>
+    <div class="grid" aria-hidden="true"></div>
+    <div id="popups" aria-hidden="true"></div>
+    <div class="app">
+      <header class="header">
+        <a class="wordmark" href="/" aria-label="Заебись, на главную">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="m19 1-3 10 10-4-6 10 11 3-12 3 2 9-9-7-8 5 3-11L0 13l12-1Z" fill="currentColor"/></svg>
+          заебись<span class="wordmark-dot">.</span>
+        </a>
+        <div class="header-right">
+          <span class="live-label"><span class="live-dot"></span> генератор хорошего</span>
+          <button id="sound" class="icon-button" type="button" aria-label="Включить звук" aria-pressed="false" title="Включить звук">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path class="sound-off" d="m16 9 5 6m0-6-5 6"/><path class="sound-on" d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section class="intro" aria-labelledby="heading">
+          <div class="eyebrow"><span class="tiny-star">✳</span> МЕНЬШЕ ДУМАТЬ. БОЛЬШЕ НАЖИМАТЬ.</div>
+          <h1 id="heading">Всё будет<br /><span class="hero-word">заебись<svg class="title-spark" viewBox="0 0 100 100" aria-hidden="true"><path d="m50 0 9 33 29-21-21 29 33 9-33 9 21 29-29-21-9 33-9-33-29 21 21-29L0 50l33-9-21-29 29 21Z" fill="currentColor"/></svg><span class="title-dot">.</span></span></h1>
+          <p class="intro-copy">Иногда для счастья нужна всего одна кнопка.<br />А иногда — нажать её ещё раз двадцать.</p>
+        </section>
+
+        <section class="playground" aria-label="Генератор визуальных эффектов">
+          <div class="orbit orbit-one" aria-hidden="true"></div>
+          <div class="orbit orbit-two" aria-hidden="true"></div>
+          <div class="orbit-label" aria-hidden="true">100% ЧИСТАЯ ЗАЕБИСТНОСТЬ</div>
+          <div class="floating-star star-left" aria-hidden="true">✦</div>
+          <div class="floating-star star-right" aria-hidden="true">✳</div>
+          <div class="button-wrap">
+            <div id="combo" class="combo" aria-hidden="true">КОМБО ×2</div>
+            <button id="make-good" class="main-button" type="button" aria-describedby="button-hint">
+              <svg viewBox="0 0 32 32" aria-hidden="true"><path d="m19 1-3 10 10-4-6 10 11 3-12 3 2 9-9-7-8 5 3-11L0 13l12-1Z" fill="currentColor"/></svg>
+              <span>сделать заебись</span>
+              <svg class="button-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>
+            </button>
+            <p id="button-hint" class="button-hint"><span class="key-hint">↵</span> жми. ещё. не останавливайся.</p>
+          </div>
+          <div id="burst-note" class="burst-note" aria-hidden="true">твой следующий клик<br /><span>сделает ещё лучше ↗</span></div>
+        </section>
+
+        <section class="dashboard" aria-label="Текущий уровень заебистности">
+          <div class="stat counter-stat"><span class="stat-label">ТЫ СДЕЛАЛ ЗАЕБИСЬ</span><div><strong id="count">0</strong><span class="stat-unit">раз</span></div></div>
+          <div class="level-stat"><div class="level-top"><span class="stat-label">УРОВЕНЬ ЗАЕБИСТНОСТИ</span><span id="level-number" class="level-number">LVL 00</span></div><div class="meter" aria-hidden="true"><span id="meter-fill"></span></div><div class="level-bottom"><span id="level-name">Пока спокойно</span><span id="intensity">0%</span></div></div>
+          <div class="stat status-stat"><span class="stat-label">СОСТОЯНИЕ ВСЕЛЕННОЙ</span><div class="universe-state"><span id="state-dot" class="state-dot"></span><span id="universe">В ожидании чуда</span></div><span id="next-level" class="next-level">Первый клик всё изменит</span></div>
+        </section>
+        <p id="announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+        <noscript><p class="noscript">Включи JavaScript в браузере, чтобы кнопка запускала эффекты.</p></noscript>
+      </main>
+
+      <footer class="footer">
+        <span class="footer-note"><span>✦</span> Каждый клик делает мир чуть заебистее.</span>
+        <button id="reset" class="reset-button" type="button"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 8a7 7 0 1 1 1 7M3 3v5h5"/></svg>Начать с чистого листа</button>
+      </footer>
+    </div>
+  </body>
+</html>
