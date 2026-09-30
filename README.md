@@ -10,6 +10,12 @@ The task is to make a button that says **«сделать заебись»** (ro
 2. Let each model plan, build, and deploy the website.
 3. Try the results and compare how well each model handled the same task.
 
+## Benchmarks
+
+| Model | Reasoning effort | Run | Public site |
+| --- | --- | --- | --- |
+| GPT-6.1 Sol | high | [gpt-6.1-sol-high](gpt-6.1-sol-high/) | [Open site](https://gpt-6-1-sol-high.perd.workers.dev/) |
+
 ## Deployment
 
 During preparation, copy [wrangler.jsonc](wrangler.jsonc) into the new run directory. Set its `name` to the directory name with dots replaced by dashes. Keep its account settings. The default assets directory is `public`; change it if the app uses another output directory.
