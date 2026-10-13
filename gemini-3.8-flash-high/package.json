@@ -1,0 +1,8 @@
+{
+  "name": "gemini-3-8-flash-high",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy"
+  }
+}
