@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171713">
+  <title>Сделать заебись — кнопка больших перемен</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <canvas id="effects" aria-hidden="true"></canvas>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Заебись, на главную"><span class="brand-mark">✳</span> ЗАЕБИСЬ<span class="brand-dot">®</span></a>
+      <span class="top-note"><span class="status-dot"></span> СИСТЕМА ГОТОВА</span>
+      <span class="top-index">ИНТЕРНЕТ / 2026</span>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="title">
+        <div class="copy">
+          <div class="eyebrow"><span>✳</span> МАЛЕНЬКАЯ КНОПКА. БОЛЬШОЕ ДЕЛО.</div>
+          <h1 id="title">ВСЁ БУДЕТ<br><span>ЗАЕБИСЬ<span class="title-star">✳</span></span></h1>
+          <p class="intro">Иногда всё, что нужно — просто нажать на кнопку. А иногда — нажать ещё раз. И ещё.</p>
+          <div class="instruction"><span class="instruction-icon">↗</span><span>ЖМИ СМЕЛЕЕ<br><b>ХУЖЕ НЕ БУДЕТ</b></span></div>
+        </div>
+        <div class="machine" aria-label="Кнопка для улучшения настроения">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="orbit-label orbit-label-top">НАЖМИ И ОТПУСТИ СИТУАЦИЮ <span>✳</span> НАЖМИ И ОТПУСТИ СИТУАЦИЮ</div>
+          <div class="button-base">
+            <button id="make-good" class="big-button" type="button"><span class="button-shine"></span><span class="button-text">СДЕЛАТЬ<br>ЗАЕБИСЬ <span>↗</span></span></button>
+          </div>
+          <div class="orbit-label orbit-label-bottom">НЕ СДЕРЖИВАЙ СЕБЯ <span>✳</span> НЕ СДЕРЖИВАЙ СЕБЯ <span>✳</span></div>
+          <span class="side-star star-a">✳</span><span class="side-star star-b">✦</span>
+        </div>
+      </section>
+      <section class="dashboard" aria-label="Счётчик заебистости">
+        <div class="dash-cell"><span class="dash-label">ТЕКУЩИЙ СТАТУС</span><strong id="status">ПОКА ПРОСТО НОРМ</strong></div>
+        <div class="dash-cell level-cell"><span class="dash-label">УРОВЕНЬ ЗАЕБИСТОСТИ</span><div class="meter"><span id="meter-fill"></span></div><strong id="level">0<span>%</span></strong></div>
+        <div class="dash-cell count-cell"><span class="dash-label">НАЖАТИЙ</span><strong id="count">000</strong><span class="count-spark">✳</span></div>
+      </section>
+      <p class="sr-only" id="announcement" aria-live="polite"></p>
+    </main>
+    <footer><span>СДЕЛАНО, ЧТОБЫ СТАЛО ЛУЧШЕ <span class="footer-heart">♥</span></span><span>ПРОДОЛЖАЙ НАЖИМАТЬ ↗</span><span>© ЗАЕБИСЬ БЮРО</span></footer>
+  </div>
+  <div id="stickers" aria-hidden="true"></div>
+</body>
+</html>
