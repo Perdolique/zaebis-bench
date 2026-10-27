@@ -1,0 +1,11 @@
+{
+  "name": "zaebis-machine",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy"
+  },
+  "packageManager": "npm@11.6.2",
+  "devDependencies": {
+    "wrangler": "^4.154.0"
+  }
+}

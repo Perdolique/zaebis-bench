@@ -40,6 +40,8 @@ Use this template only when creating a new run's `AGENTS.md`. The placeholders m
 
 When the user asks you to follow this file, carry out the benchmark prompt below in this directory. This run is already prepared: do not create another run directory or repeat the preparation handoff.
 
+After deployment, verify the public site. Then add or update this run in the repository-root README.md benchmark table with the model, reasoning effort, run directory link, and verified public URL. Access only the table structure and this run’s row; do not inspect other runs or their results.
+
 Use the prompt snapshot in this file as the task. Do not read the repository's root prompt.md or replace this snapshot with a newer version. Keep this file unchanged during benchmark implementation so the original task remains recorded.
 
 ## Isolation
@@ -48,9 +50,9 @@ Use the prompt snapshot in this file as the task. Do not read the repository's r
 - Do not list, open, search, or copy from sibling run directories, including through tools, scripts, browser access, or symlinks.
 - Do not use another model's or effort's results as examples or references.
 - Do not read previous chats, saved task histories, or memories to learn about other benchmark runs.
-- Limit file searches and project commands to this directory. Do not search the repository root or inspect Git history for earlier results. Shared root instructions may be loaded as guidance, not as permission to read root files.
+- Limit file searches and project commands to this directory. Do not search the repository root or inspect Git history for earlier results. Shared root instructions may be loaded as guidance. The README.md update described above is the only exception for root files.
 - Wrangler may use the user's normal global authentication files. Keep its logs and generated output inside this directory. This exception does not allow access to other benchmark runs.
-- If you need information outside this directory, ask the user instead of inspecting other runs.
+- If you need information outside this directory beyond the README.md update, ask the user instead of inspecting other runs.
 
 ## Benchmark prompt
 
@@ -61,13 +63,15 @@ Use the prompt snapshot in this file as the task. Do not read the repository's r
 
 When the user asks you to follow the run's `AGENTS.md`, carry out its embedded benchmark prompt there. The directory is already prepared; do not create a new one or repeat the handoff. Keep project files, dependencies, commands, and generated output inside that directory. Do not implement the benchmark in the repository root.
 
+After deployment, verify the public site. Then add or update this run in the repository-root `README.md` benchmark table with the model, reasoning effort, run directory link, and verified public URL. Access only the table structure and this run’s row; do not inspect other runs or their results.
+
 - Do not list, open, search, or copy from sibling run directories, including through tools, scripts, browser access, or symlinks.
 - Do not use results from another model or effort as examples or references.
 - Do not read previous chats, saved task histories, or memories to learn about other benchmark runs.
 - Limit file searches and project commands to the current benchmark directory. Do not search the repository root or inspect Git history for earlier results.
-- The shared root instructions may be loaded as guidance. The root prompt is read only during preparation and copied into the run's `AGENTS.md`. Use that snapshot during the run; do not read the current root prompt or other root files.
+- The shared root instructions may be loaded as guidance. The root prompt is read only during preparation and copied into the run's `AGENTS.md`. Use that snapshot during the run; do not read the current root prompt or other root files except for the `README.md` update above.
 - Wrangler may use the user's normal global authentication files. Keep its logs and generated output inside this directory. This exception does not allow access to other benchmark runs.
-- If you need information outside the allowed directory, ask the user instead of inspecting another run.
+- If you need information outside the allowed directory beyond the `README.md` update, ask the user instead of inspecting another run.
 
 ## Repository maintenance
 
