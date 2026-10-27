@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171322">
+  <title>Бюро заебись</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23ff6baf%22/%3E%3Ctext x=%2250%22 y=%2277%22 text-anchor=%22middle%22 font-size=%2275%22%3E✳%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Unbounded:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <div id="effects" aria-hidden="true"></div>
+  <div class="page">
+    <header class="header">
+      <a class="brand" href="/" aria-label="Бюро заебись — на главную"><span class="brand-star">✳</span><span>БЮРО<br>ЗАЕБИСЬ</span></a>
+      <div class="header-note"><span class="status-dot"></span> РАБОТАЕМ НАД ХОРОШИМ</div>
+      <div class="header-index">ИНТЕРНЕТ-ОТДЕЛ<br>ХОРОШИХ ДЕЛ / 001</div>
+    </header>
+    <main>
+      <div class="topline"><span>НЕМНОГО МАГИИ НА КАЖДЫЙ ДЕНЬ</span><span>✳ &nbsp; СДЕЛАНО С ДУШОЙ</span></div>
+      <section class="hero" aria-labelledby="title">
+        <div class="side-label left-label">ОФИЦИАЛЬНО РАЗРЕШАЕМ<br>СДЕЛАТЬ СЕБЕ ХОРОШО ↗</div>
+        <div class="side-label right-label">НАЖИМАЙ СМЕЛЕЕ<br>ХУЖЕ НЕ БУДЕТ ↙</div>
+        <p class="eyebrow"><span>✦</span> ВСЁ В ТВОИХ РУКАХ <span>✦</span></p>
+        <h1 id="title">ПУСТЬ ВСЁ<br><em>БУДЕТ</em> <span>ЗАЕБИСЬ.</span></h1>
+        <p class="intro">Иногда всё, что нужно — одна кнопка.<br>Ну или очень много нажатий.</p>
+        <div class="button-area">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="button-spark spark-one">✳</div><div class="button-spark spark-two">✦</div>
+          <button id="make-good" type="button"><span class="button-small">ЖМИ СЮДА ↓</span><span>СДЕЛАТЬ<br>ЗАЕБИСЬ</span><span class="button-arrow">↗</span></button>
+          <span class="button-caption">НЕ СДЕРЖИВАЙСЯ · ЖМИ ЕЩЁ</span>
+        </div>
+      </section>
+      <section class="dashboard" aria-label="Показатели заебисности">
+        <div class="metric"><span class="metric-label">УРОВЕНЬ ЗАЕБИСНОСТИ</span><strong id="level">ПОКА СКРОМНО</strong></div>
+        <div class="meter-wrap"><div class="meter-top"><span>ШКАЛА ХОРОШЕГО</span><span id="percent">0%</span></div><div class="meter"><div id="fill"></div></div><div class="meter-bottom"><span>НОРМАЛЬНО</span><span>НЕПРИЛИЧНО</span></div></div>
+        <div class="counter"><span class="metric-label">НАЖАТИЙ</span><strong id="count">000</strong><span class="counter-star">✳</span></div>
+      </section>
+      <div class="ticker" aria-hidden="true"><div>ВСЁ БУДЕТ ЗАЕБИСЬ <b>✳</b> ЕЩЁ ЛУЧШЕ <b>✳</b> ВСЁ БУДЕТ ЗАЕБИСЬ <b>✳</b> ЕЩЁ ЛУЧШЕ <b>✳</b> ВСЁ БУДЕТ ЗАЕБИСЬ <b>✳</b> ЕЩЁ ЛУЧШЕ <b>✳</b> </div></div>
+    </main>
+    <footer><span>© БЮРО ЗАЕБИСЬ, 2026</span><span>ПУСТЬ СЕГОДНЯ СЛУЧИТСЯ ЧТО-ТО ХОРОШЕЕ <b>✳</b></span><span>СДЕЛАНО ДЛЯ ТЕБЯ ↗</span></footer>
+  </div>
+  <div class="sr-only" id="announcement" aria-live="polite"></div>
+  <script src="/script.js"></script>
+</body>
+</html>
