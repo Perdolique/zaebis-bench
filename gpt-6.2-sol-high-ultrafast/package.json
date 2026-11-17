@@ -1,0 +1,11 @@
+{
+  "name": "gpt-6-2-sol-high-ultrafast",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "deploy": "WRANGLER_LOG_PATH=.wrangler/logs wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.164.0"
+  }
+}

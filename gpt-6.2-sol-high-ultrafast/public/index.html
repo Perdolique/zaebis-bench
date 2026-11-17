@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#131510">
+  <meta name="description" content="Пульт управления хаосом. Жми чаще, и эффекты будут накладываться друг на друга.">
+  <title>Бюро хаоса — сделать заебись</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <script type="module" src="/chaos.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="wordmark"><span class="mark" aria-hidden="true"><i class="bolt"></i></span> БЮРО ХАОСА</div>
+      <button class="reset" type="button" id="reset" disabled><span aria-hidden="true">↻</span> Сбросить</button>
+    </header>
+
+    <main>
+      <div class="intro">
+        <h1>ЗАЕБИСЬ<span>.</span></h1>
+        <p>Жми чаще<span>.</span><br> Эффекты накладываются.</p>
+      </div>
+
+      <div class="console">
+        <section class="chamber" aria-labelledby="chamber-label">
+          <div class="chamber-grid" aria-hidden="true"></div>
+          <div class="chamber-top">
+            <h2 id="chamber-label"><span class="indicator" aria-hidden="true"></span> КАМЕРА РАЗГОНА</h2>
+            <span class="chamber-state" id="chamber-state" aria-hidden="true">ОЖИДАНИЕ</span>
+          </div>
+
+          <div class="trigger-assembly">
+            <div class="scope" aria-hidden="true">
+              <div class="scope-cross"></div>
+              <div class="scope-ring"></div>
+              <div class="scope-ticks"></div>
+              <span class="scope-node scope-node-top"></span>
+              <span class="scope-node scope-node-bottom"></span>
+              <span class="scope-node scope-node-left"></span>
+              <span class="scope-node scope-node-right"></span>
+            </div>
+            <button class="trigger" type="button" id="trigger">
+              <span class="trigger-face">
+                <i class="bolt" aria-hidden="true"></i>
+                <span>сделать<br>заебись</span>
+              </span>
+            </button>
+          </div>
+
+          <div class="chamber-bottom">
+            <span class="hazard-stripe" aria-hidden="true"></span>
+            <span class="keyboard-hint"><kbd>ПРОБЕЛ</kbd> тоже жмёт</span>
+          </div>
+        </section>
+
+        <aside class="telemetry" aria-labelledby="telemetry-label">
+          <h2 id="telemetry-label">ТЕЛЕМЕТРИЯ <span aria-hidden="true">⌁</span></h2>
+          <div class="readout">
+            <div class="readout-label">НАЖАТИЯ</div>
+            <output class="count" id="count" for="trigger" aria-live="off">000</output>
+          </div>
+          <div class="heat">
+            <div class="heat-label">
+              <label for="heat-meter">НАКАЛ</label>
+              <span id="heat-value" aria-hidden="true">0%</span>
+            </div>
+            <meter id="heat-meter" min="0" max="100" value="0">0%</meter>
+            <div class="heat-track" aria-hidden="true"><div id="heat-fill"></div></div>
+          </div>
+          <div class="phases">
+            <h3>СТАДИЯ</h3>
+            <ol aria-label="Стадии разгона">
+              <li data-phase="0" aria-current="step"><span>00</span> Ожидание</li>
+              <li data-phase="1"><span>01</span> Искра</li>
+              <li data-phase="2"><span>02</span> Цепная реакция</li>
+              <li data-phase="3"><span>03</span> Перегрев</li>
+              <li data-phase="4"><span>04</span> Абсурд</li>
+            </ol>
+          </div>
+        </aside>
+      </div>
+      <p class="visually-hidden" id="announcement" role="status"></p>
+    </main>
+  </div>
+  <canvas id="effects" aria-hidden="true"></canvas>
+</body>
+</html>
