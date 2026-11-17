@@ -18,6 +18,7 @@ The task is to make a button that says **«сделать заебись»** (ro
 | GPT-6.1 Terra | max | [gpt-6.1-terra-max](gpt-6.1-terra-max/) | [Open site](https://gpt-6-1-terra-max.perd.workers.dev/) |
 | GPT-6.1 Sol | high | [gpt-6.1-sol-high](gpt-6.1-sol-high/) | [Open site](https://gpt-6-1-sol-high.perd.workers.dev/) |
 | Gemini 3.8 Flash | high | [gemini-3.8-flash-high](gemini-3.8-flash-high/) | [Open site](https://gemini-3-8-flash-high.perd.workers.dev/) |
+| GPT 6.2 Sol | high | [gpt-6.2-sol-high](./gpt-6.2-sol-high/) | [gpt-6-2-sol-high.perd.workers.dev](https://gpt-6-2-sol-high.perd.workers.dev/) |
 
 ## Deployment
 

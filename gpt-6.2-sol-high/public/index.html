@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c0e09">
+  <meta name="description" content="Одна кнопка. Чем чаще жмёшь, тем больше хаоса.">
+  <title>Сделай заебись — пульт хаоса</title>
+  <link rel="icon" href="/assets/favicon.png" type="image/png">
+  <link rel="preload" href="/assets/vortex.webp" as="image">
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/main.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"></span>Пульт хаоса</div>
+      <div class="actions">
+        <button class="tool" id="sound" type="button" aria-label="Звук" aria-pressed="false">
+          <span class="speaker" aria-hidden="true"></span>
+          <span class="sound-label" aria-hidden="true">Звук <span id="sound-state">выкл</span></span>
+        </button>
+        <button class="tool reset" id="reset" type="button" aria-label="Сбросить" aria-keyshortcuts="Escape">
+          <span class="reset-mark" aria-hidden="true">↺</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="console">
+      <section class="stage" id="stage" aria-labelledby="title">
+        <div class="scene" aria-hidden="true"></div>
+        <div class="viewfinder" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <canvas id="effects" aria-hidden="true"></canvas>
+        <h1 id="title">Сделай заебись<span aria-hidden="true">.</span></h1>
+        <div class="assembly">
+          <div class="bezel" aria-hidden="true"></div>
+          <button class="trigger" id="trigger" type="button" aria-keyshortcuts="Space" aria-describedby="hint">
+            <span class="bolt" aria-hidden="true"></span>
+            <span>Сделать<br> заебись</span>
+          </button>
+        </div>
+        <p id="hint">Жми быстрее, чтобы эффекты накладывались</p>
+        <noscript>Включи JavaScript, чтобы запустить хаос.</noscript>
+      </section>
+
+      <section class="dashboard" aria-label="Показатели">
+        <div class="readout">
+          <span class="label">Нажатия</span>
+          <span class="number" id="count">000</span>
+        </div>
+        <div class="meter">
+          <div class="meter-heading">
+            <span class="label">Уровень хаоса</span>
+            <span class="tier" id="tier">Ожидание</span>
+          </div>
+          <div class="meter-track" aria-hidden="true"><span id="meter-fill"></span></div>
+        </div>
+        <div class="readout combo">
+          <span class="label">Комбо</span>
+          <span class="number" id="combo"><span class="times">×</span><span id="streak">00</span></span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="shortcuts">
+      <span><kbd>Пробел</kbd> нажать</span>
+      <span><kbd>Esc</kbd> сбросить</span>
+    </footer>
+
+    <div class="sr-only" id="announcement" role="status"></div>
+  </div>
+</body>
+</html>

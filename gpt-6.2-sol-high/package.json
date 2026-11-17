@@ -1,0 +1,13 @@
+{
+  "name": "gpt-6-2-sol-high",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "npm@11.20.0",
+  "scripts": {
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "4.164.0"
+  }
+}
