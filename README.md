@@ -14,6 +14,7 @@ The task is to make a button that says **«сделать заебись»** (ro
 
 | Model | Reasoning effort | Run | Public site |
 | --- | --- | --- | --- |
+| gpt-6.2-astra | high | [gpt-6.2-astra-high](./gpt-6.2-astra-high/) | [Open site](https://gpt-6-2-astra-high.perd.workers.dev) |
 | GPT-6.1 Terra | high | [gpt-6.1-terra-high](gpt-6.1-terra-high/) | [Open site](https://gpt-6-1-terra-high.perd.workers.dev/) |
 | GPT-6.1 Terra | max | [gpt-6.1-terra-max](gpt-6.1-terra-max/) | [Open site](https://gpt-6-1-terra-max.perd.workers.dev/) |
 | GPT-6.1 Sol | high | [gpt-6.1-sol-high](gpt-6.1-sol-high/) | [Open site](https://gpt-6-1-sol-high.perd.workers.dev/) |

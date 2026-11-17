@@ -1,0 +1,10 @@
+{
+  "name": "gpt-6-2-astra-high",
+  "private": true,
+  "scripts": {
+    "deploy": "WRANGLER_LOG_PATH=.wrangler/logs WRANGLER_SEND_METRICS=false wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.164.0"
+  }
+}
