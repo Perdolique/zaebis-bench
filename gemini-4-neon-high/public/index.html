@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>Сделать заебись</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-level="0">
+    <div id="stage-frame" class="stage-frame">
+      <!-- Layer 1: Escalating background spectacle -->
+      <canvas id="bg-canvas" class="stage-canvas bg-canvas" aria-hidden="true"></canvas>
+
+      <!-- Edge combo & chaos heat glow -->
+      <div class="edge-aura" aria-hidden="true"></div>
+
+      <!-- Top breaking news ticker (unlocks at Level 7+) -->
+      <div class="news-ticker news-ticker-top" aria-hidden="true">
+        <span class="ticker-label">⚡ ЭКСТРЕННО</span>
+        <div class="ticker-viewport">
+          <div id="ticker-top-track" class="ticker-track ticker-track-reverse"></div>
+        </div>
+      </div>
+
+      <!-- Disco ball dropping from ceiling (unlocks at Level 3+) -->
+      <div class="disco-rig" aria-hidden="true">
+        <div class="disco-cord"></div>
+        <div class="disco-ball">
+          <div class="disco-glint"></div>
+        </div>
+      </div>
+
+      <!-- Persistent perimeter stickers & stamps (unlocks at Level 4+) -->
+      <div id="stickers-layer" class="stickers-layer" aria-hidden="true"></div>
+
+      <!-- Dancing equalizer bars along bottom (unlocks at Level 3+) -->
+      <div id="equalizer" class="equalizer" aria-hidden="true"></div>
+
+      <!-- Top HUD & Controls -->
+      <header class="hud">
+        <div class="hud-stats" aria-label="Показатели заебистности">
+          <div class="hud-row">
+            <span id="stage-badge" class="stage-badge">Обычный день</span>
+            <span class="stat-chip" title="Количество нажатий">
+              <span class="stat-label">Клики</span>
+              <span id="clicks-count" class="stat-num">0</span>
+            </span>
+            <span id="combo-pill" class="combo-pill">
+              <span id="combo-value" class="stat-num">×1</span>
+              <span id="cps-value" class="cps-num">0.0/с</span>
+            </span>
+          </div>
+          <div class="meter-row">
+            <div id="meter-track" class="meter-track" aria-hidden="true">
+              <div id="meter-fill" class="meter-fill"></div>
+            </div>
+            <span id="meter-value" class="meter-value">0%</span>
+          </div>
+        </div>
+
+        <div class="hud-controls" role="toolbar" aria-label="Управление эффектами">
+          <button id="sound-toggle" type="button" class="ctrl-btn" aria-pressed="true" aria-label="Выключить звук">
+            <span class="ctrl-icon" aria-hidden="true">🔊</span>
+            <span class="ctrl-text">Звук</span>
+          </button>
+          <button id="soft-toggle" type="button" class="ctrl-btn" aria-pressed="false" aria-label="Включить мягкий режим">
+            <span class="ctrl-icon" aria-hidden="true">✨</span>
+            <span class="ctrl-text">Макс</span>
+          </button>
+          <button id="reset-btn" type="button" class="ctrl-btn ctrl-btn-reset" aria-label="Сбросить хаос">
+            <span class="ctrl-icon" aria-hidden="true">↺</span>
+            <span class="ctrl-text">Сброс</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Achievement toasts -->
+      <div id="toast-stack" class="toast-stack" aria-hidden="true"></div>
+
+      <!-- Tier-up / Supernova banner -->
+      <div id="milestone-banner" class="milestone-banner" aria-hidden="true">
+        <div id="milestone-kicker" class="milestone-kicker"></div>
+        <div id="milestone-title" class="milestone-title"></div>
+      </div>
+
+      <!-- Primary interactive stage -->
+      <main class="stage-main">
+        <div id="hero-wrap" class="hero-wrap">
+          <!-- Rotating halo behind button -->
+          <div class="hero-aura" aria-hidden="true"></div>
+
+          <!-- Radiant wings (unlock at Level 6+) -->
+          <svg class="hero-wings" viewBox="0 0 560 220" aria-hidden="true">
+            <defs>
+              <linearGradient id="wing-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fff4a3" />
+                <stop offset="45%" stop-color="#ff2e93" />
+                <stop offset="100%" stop-color="#00f5d4" />
+              </linearGradient>
+            </defs>
+            <g class="wing wing-left">
+              <path d="M240 120 C175 40, 85 15, 16 42 C64 66, 98 86, 134 106 C80 96, 40 100, 12 126 C64 134, 110 138, 152 142 C108 152, 74 166, 48 192 C106 184, 178 166, 240 138 Z" fill="url(#wing-grad)" />
+            </g>
+            <g class="wing wing-right">
+              <path d="M320 120 C385 40, 475 15, 544 42 C496 66, 462 86, 426 106 C480 96, 520 100, 548 126 C496 134, 450 138, 408 142 C452 152, 486 166, 512 192 C454 184, 382 166, 320 138 Z" fill="url(#wing-grad)" />
+            </g>
+          </svg>
+
+          <!-- Golden crown (unlocks at Level 5+) -->
+          <svg class="hero-crown" viewBox="0 0 120 76" aria-hidden="true">
+            <defs>
+              <linearGradient id="crown-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fff8b0" />
+                <stop offset="50%" stop-color="#ffb800" />
+                <stop offset="100%" stop-color="#ff5e00" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M12 62 L6 22 L34 40 L60 8 L86 40 L114 22 L108 62 Z"
+              fill="url(#crown-gold)"
+              stroke="#fff4c2"
+              stroke-width="3"
+              stroke-linejoin="round"
+            />
+            <rect x="12" y="60" width="96" height="10" rx="4" fill="#ffe270" />
+            <circle cx="60" cy="8" r="5" fill="#ffffff" />
+            <circle cx="6" cy="22" r="4" fill="#ff2e93" />
+            <circle cx="114" cy="22" r="4" fill="#00f5d4" />
+          </svg>
+
+          <!-- The iconic button -->
+          <button id="zaebis-btn" type="button" class="zaebis-btn">
+            <span class="btn-shine" aria-hidden="true"></span>
+            <span id="btn-tag" class="btn-tag" hidden></span>
+            <span class="btn-label">СДЕЛАТЬ ЗАЕБИСЬ</span>
+          </button>
+
+          <p id="stage-subtitle" class="stage-subtitle">нажми, чтобы пошло дело</p>
+          <p class="kbd-hint" aria-hidden="true">можно жать мышкой, тапом или пробелом</p>
+        </div>
+      </main>
+
+      <!-- Floating hype phrases -->
+      <div id="floating-layer" class="floating-layer" aria-hidden="true"></div>
+
+      <!-- Layer 2: Foreground high-FPS FX canvas -->
+      <canvas id="fx-canvas" class="stage-canvas fx-canvas" aria-hidden="true"></canvas>
+
+      <!-- Bottom breaking news ticker (unlocks at Level 4+) -->
+      <div class="news-ticker news-ticker-bottom" aria-hidden="true">
+        <span class="ticker-label">🔥 СРОЧНО</span>
+        <div class="ticker-viewport">
+          <div id="ticker-bottom-track" class="ticker-track"></div>
+        </div>
+      </div>
+
+      <!-- Accessible live announcements for milestone changes -->
+      <div id="live-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    </div>
+
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
